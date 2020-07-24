@@ -37,5 +37,6 @@ $(document).ready(function() {
   function update() {
     $('#boss_hp').text(boss.hp)
     $('#minion_hp').text(minion.hp)
+    $('#player_level').text(player.level)
   }
 });
