@@ -35,7 +35,7 @@ $(document).ready(function() {
   });
 
   function update() {
-    $('#boss_hp_bar').text(boss.hp)
-    $('#minion_hp_bar').text(minion.hp)
+    $('#boss_hp').text(boss.hp)
+    $('#minion_hp').text(minion.hp)
   }
 });
