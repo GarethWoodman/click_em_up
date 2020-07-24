@@ -1,9 +1,12 @@
 describe("minion", function() {
   let minion = new Minion();
+
   const maxHP = 10;
+  const exp   = 1;
 
   beforeEach(function() {
-    minion.hp = maxHP;
+    minion.hp  = maxHP;
+    minion.exp = exp;
   });
 
   describe("check HP", function() {
@@ -20,4 +23,10 @@ describe("minion", function() {
       });
     });
   });
+
+  describe("check EXP", function() {
+    it("should return EXP", function() {
+      expect(minion.exp).toEqual(exp)
+    })
+  })
 })
