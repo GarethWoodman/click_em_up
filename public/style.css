@@ -2,4 +2,7 @@ h1, p, th, td {
   font-family: 'H', 'Trebuchet MS', 'Helvetica'
 }
 
-#boss {cursor: pointer;}
+#boss, #minion {
+  cursor: pointer;
+  user-select: none;
+}
