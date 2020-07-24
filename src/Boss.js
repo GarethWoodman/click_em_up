@@ -1,11 +1,10 @@
 class Boss {
   constructor() {
-    //this.name = "name"
+
   }
 
-  publicMethod() {
-    //do this
-    //return this;
+  takeDamage(damage) {
+    this.hp -= damage;
   };
 
   _privateMethd(){
