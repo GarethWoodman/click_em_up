@@ -1,3 +1,5 @@
 h1, p, th, td {
   font-family: 'H', 'Trebuchet MS', 'Helvetica'
 }
+
+#boss {cursor: pointer;}
