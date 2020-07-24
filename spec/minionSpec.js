@@ -1,25 +1,31 @@
 describe("minion", function() {
-  let minion = new Minion();
+  let player         = new Player();
+  const damage       = 1;
+  const playerHP     = 100;
+  const currentLevel = 1;
 
-  const maxHP = 10;
-  const exp   = 1;
+  let minion     = new Minion();
+  const minionHP = 10;
+  const exp      = 1;
 
   beforeEach(function() {
-    minion.hp  = maxHP;
+    player.atkPower = damage
+    player.hp       = playerHP
+    player.exp      = 0;
+
+    minion.hp  = minionHP;
     minion.exp = exp;
-  });
+  })
 
   describe("check HP", function() {
     it("should return HP", function() {
-      expect(minion.hp).toEqual(maxHP)
+      expect(minion.hp).toEqual(minionHP)
     });
 
     describe("takes damage", function() {
-      let damage = 5;
-
       it("should reduce HP", function() {
-        minion.takeDamage(damage)
-        expect(minion.hp).toEqual(maxHP - damage)
+        minion.takeDamage(player)
+        expect(minion.hp).toEqual(minionHP - damage)
       });
     });
   });
@@ -32,7 +38,9 @@ describe("minion", function() {
 
   describe("check if defeated", function() {
     it("returns true if HP is 0 or below", function() {
-      minion.takeDamage(maxHP);
+      for (i = 0; i < 10; i++) {
+        minion.takeDamage(player)
+      }
       expect(minion.isDefeated).toBeTrue();
     })
   })

@@ -1,13 +1,20 @@
 describe("Player", function() {
-  let player = new Player();
-
+  let player         = new Player();
   const damage       = 1;
-  const maxHP        = 100;
-  const currentLevel = 1
+  const playerHP     = 100;
+  const currentLevel = 1;
+
+  let minion     = new Minion();
+  const minionHP = 10;
+  const exp      = 1;
 
   beforeEach(function() {
     player.atkPower = damage
-    player.hp = maxHP
+    player.hp       = playerHP
+    player.exp      = 0;
+
+    minion.hp  = minionHP;
+    minion.exp = exp;
   })
 
   describe("check atkPower", function() {
@@ -18,7 +25,7 @@ describe("Player", function() {
 
   describe("check HP", function() {
     it("should return HP", function() {
-      expect(player.hp).toEqual(maxHP)
+      expect(player.hp).toEqual(playerHP)
     })
   })
 
@@ -28,10 +35,12 @@ describe("Player", function() {
     })
   })
 
-  // describe("defeats minion", function() {
-  //   let
-  //   it("increases experience points", function() {
-  //
-  //   })
-  // })
+  describe("defeats minion", function() {
+    it("increases experience points", function() {
+      for (i = 0; i < 10; i++) {
+        minion.takeDamage(player)
+      }
+      expect(player.exp).toEqual(exp);
+    })
+  })
 })

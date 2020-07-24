@@ -3,13 +3,13 @@ class Minion {
     this.isDefeated = false;
   }
 
-  takeDamage(damage) {
-    this.hp -= damage;
-    if(this.hp <= 0) { this.isDefeated = true }
+  takeDamage(player) {
+    this.hp -= player.atkPower;
+    if(this.hp <= 0) { this._rewards(player) }
   };
 
-  _privateMethd(){
-    //do this
-    //return this;
+  _rewards(player){
+    this.isDefeated = true
+    player.exp += this.exp
   };
 }
