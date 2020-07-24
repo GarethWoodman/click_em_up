@@ -1,27 +1,30 @@
-var boss   = new Boss();
-var player = new Player();
-var minion = new Minion();
-
-function configureBoss(){
+function spawnBoss(){
+  var boss = new Boss();
   boss.hp = 100;
+
+  return boss;
 }
 
-function configurePlayer(){
+function spawnPlayer(){
+  var player = new Player();
   player.atkPower = 1;
+
+  return player;
 }
 
-function configureMinion(){
+function spawnMinion(){
+  var minion = new Minion();
   minion.hp = 10;
-}
+  minion.exp = 1;
 
-function configureModels(){
-  configureBoss();
-  configurePlayer();
-  configureMinion();
+  return minion;
 }
 
 $(document).ready(function() {
-  configureModels();
+  var boss = spawnBoss();
+  var player = spawnPlayer();
+  var minion = spawnMinion();
+
   update()
 
   $('#boss').on('click', function() {
@@ -30,7 +33,7 @@ $(document).ready(function() {
   });
 
   $('#minion').on('click', function() {
-    minion.takeDamage(player.atkPower)
+    minion.takeDamage(player)
     update()
   });
 
@@ -38,5 +41,12 @@ $(document).ready(function() {
     $('#boss_hp').text(boss.hp)
     $('#minion_hp').text(minion.hp)
     $('#player_level').text(player.level)
+    $('#player_exp').text(player.exp)
+
+    if(minion.isDefeated) { killMinion() }
+  }
+
+  function killMinion() {
+    minion = spawnMinion();
   }
 });
