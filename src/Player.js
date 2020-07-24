@@ -1,6 +1,6 @@
 class Player {
   constructor() {
-
+    this.level = 1;
   }
 
   _publicMethd(){
