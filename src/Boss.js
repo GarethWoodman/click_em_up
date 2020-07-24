@@ -1,5 +1,5 @@
-class Object {
-  constructor(index) {
+class Boss {
+  constructor() {
     //this.name = "name"
   }
 

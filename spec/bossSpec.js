@@ -1,5 +1,5 @@
-describe("Obj", function() {
-
+describe("Boss", function() {
+  var boss = new Boss();
   // beforeEach(function() {
   //   obj = new Obj()
   // });
