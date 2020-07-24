@@ -29,4 +29,11 @@ describe("minion", function() {
       expect(minion.exp).toEqual(exp)
     })
   })
+
+  describe("check if defeated", function() {
+    it("returns true if HP is 0 or below", function() {
+      minion.takeDamage(maxHP);
+      expect(minion.isDefeated).toBeTrue();
+    })
+  })
 })
