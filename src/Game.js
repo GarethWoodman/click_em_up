@@ -5,16 +5,13 @@ class Game {
     this._createBoss()
   }
 
-  update() {
-    this._checkMinion();
-  }
-
   attackBoss(){
     this.boss.takeDamage(this.player)
   }
 
   attackMinion(){
     this.minion.takeDamage(this.player)
+    this._checkMinion();
   }
 
   _checkMinion() {
@@ -24,9 +21,9 @@ class Game {
     }
   }
   _createMinion() {
-    this.minion          = new Minion();
-    this.minion.hp       = 10;
-    this.minion.exp      = 1;
+    this.minion     = new Minion();
+    this.minion.hp  = 10;
+    this.minion.exp = 1;
   }
 
   _createPlayer() {
@@ -35,7 +32,7 @@ class Game {
   }
 
   _createBoss() {
-    this.boss            = new Boss();
-    boss.hp              = 100;
+    this.boss    = new Boss();
+    this.boss.hp = 100;
   }
 }
