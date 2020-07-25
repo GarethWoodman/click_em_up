@@ -34,13 +34,4 @@ describe("Player", function() {
       expect(player.level).toEqual(currentLevel)
     })
   })
-
-  describe("defeats minion", function() {
-    it("increases experience points", function() {
-      for (i = 0; i < 10; i++) {
-        minion.takeDamage(player)
-      }
-      expect(player.exp).toEqual(exp);
-    })
-  })
 })

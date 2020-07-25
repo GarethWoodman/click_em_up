@@ -5,11 +5,6 @@ class Minion {
 
   takeDamage(player) {
     this.hp -= player.atkPower;
-    if(this.hp <= 0) { this._rewards(player) }
+    if(this.hp <= 0) { this.isDefeated = true }
   };
-
-  _rewards(player){
-    this.isDefeated = true
-    player.exp += this.exp
-  };
-}
+};

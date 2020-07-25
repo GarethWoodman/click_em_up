@@ -3,8 +3,8 @@ class Boss {
 
   }
 
-  takeDamage(damage) {
-    this.hp -= damage;
+  takeDamage(player) {
+    this.hp -= player.atkPower;
   };
 
   _privateMethd(){

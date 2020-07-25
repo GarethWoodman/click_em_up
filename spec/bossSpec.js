@@ -2,6 +2,9 @@ describe("Boss", function() {
   let boss = new Boss();
   const maxHP = 100;
 
+  let player = new Player();
+  player.atkPower = 1;
+
   beforeEach(function() {
     boss.hp = maxHP
   });
@@ -12,11 +15,9 @@ describe("Boss", function() {
     });
 
     describe("takes damage", function() {
-      let damage = 5;
-
       it("should reduce HP", function() {
-        boss.takeDamage(damage)
-        expect(boss.hp).toEqual(maxHP - damage)
+        boss.takeDamage(player)
+        expect(boss.hp).toEqual(maxHP - player.atkPower)
       });
     });
   });
