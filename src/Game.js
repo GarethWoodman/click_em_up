@@ -3,9 +3,6 @@ class Game {
     this._createPlayer()
     this._createMinion()
     this._createBoss()
-
-    this.expIndex = 0;
-    this.expTable = [10,13,17,22,29,37,48,63,82,106,138]
   }
 
   update() {
@@ -22,24 +19,10 @@ class Game {
 
   _checkMinion() {
     if(this.minion.isDefeated) {
+      this.player.reward(this.minion)
       this._createMinion();
-      this._rewardPlayer()
     }
   }
-
-  _rewardPlayer() {
-    this.player.exp += this.minion.exp
-    if(this.player.exp === this.expTable[this.expIndex]){
-      this._levelUp();
-    }
-  }
-
-  _levelUp(){
-    this.player.level += 1
-    this.player.exp = 0
-    this.expIndex += 1
-  }
-
   _createMinion() {
     this.minion          = new Minion();
     this.minion.hp       = 10;
