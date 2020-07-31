@@ -1,14 +1,16 @@
 class Boss {
-  constructor() {
-
+  constructor(api) {
+    this.api = api
+    this.maxHP = 1000
   }
 
   takeDamage(player) {
-    this.hp -= player.atkPower;
+    this.api.patch(player.atkPower)
+    this.calculateHealth()
   };
 
-  _privateMethd(){
-    //do this
-    //return this;
-  };
+  calculateHealth() {
+    let bossHealth = (100 / this.maxHP) * this.api.number
+    $('#health').width(bossHealth)
+  }
 };

@@ -18,6 +18,7 @@ class Player {
     this.level += 1
     this.exp = 0
     this.expIndex += 1
+    this.atkPower += 5
   };
 
   _privateMethd(){

@@ -23,6 +23,20 @@ h1, p, th, td {
   margin: 0 auto;
   }
 
-  #player_level, #player_exp {
-    display: inline-block;
-  }
+#player_level, #player_exp {
+  display: inline-block;
+}
+
+#health-bar {
+  width: 100px;
+  height: 20px;
+  background-color: red;
+  text-align: center;
+  margin: 0 auto;
+  margin: 0 auto;
+}
+
+#health {
+  height: 20px;
+  background-color: green;
+}
