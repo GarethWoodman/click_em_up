@@ -42,16 +42,17 @@ $(document).ready(function() {
 
     $(minion).on('mouseup', function() {
       $(minion).empty();
-      $(minion).prepend('<img src="./images/goomba.png" />')
+      $(minion).prepend('<img src="./images/minion.png" />')
     });
 
     update()
   }
 
   function setup() {
-    $('#minion_0').prepend('<img src="./images/goomba.png" />')
-    $('#minion_1').prepend('<img src="./images/goomba.png" />')
-    $('#minion_2').prepend('<img src="./images/goomba.png" />')
+    $('#boss').prepend('<img src="./images/boss.png" />')
+    $('#minion_0').prepend('<img src="./images/minion.png" />')
+    $('#minion_1').prepend('<img src="./images/minion.png" />')
+    $('#minion_2').prepend('<img src="./images/minion.png" />')
     update()
   }
 });

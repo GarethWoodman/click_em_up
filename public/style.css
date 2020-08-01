@@ -2,6 +2,10 @@ h1, p, th, td {
   font-family: 'H', 'Trebuchet MS', 'Helvetica'
 }
 
+body {
+  background-image: url('https://wallpaper-house.com/data/out/12/wallpaper2you_544236.png');
+}
+
 #boss {
   cursor: pointer;
   user-select: none;
@@ -25,6 +29,10 @@ h1, p, th, td {
 
 #player_level, #player_exp {
   display: inline-block;
+}
+
+#minion_0, #minion_1, #minion_2 {
+  padding-top: 10px;
 }
 
 .minion {
