@@ -6,6 +6,23 @@ body {
   background-image: url('https://wallpaper-house.com/data/out/12/wallpaper2you_544236.png');
 }
 
+p {
+  padding: 0px;
+  margin: 0px;
+  font-size: 30px;
+}
+
+#player {
+  border-radius: 50px;
+  background: #000;
+  padding: 20px;
+  height: 50px;
+  color: #fff;
+  margin: auto;
+   width: 50%;
+  /* text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black; */
+}
+
 #boss {
   cursor: pointer;
   user-select: none;
@@ -29,6 +46,7 @@ body {
 
 #player_level, #player_exp {
   display: inline-block;
+  padding-right: 30px
 }
 
 #minion_0, #minion_1, #minion_2 {
