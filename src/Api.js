@@ -3,30 +3,24 @@ class Api {
     this.URL = "https://api-test-dragon.herokuapp.com/objects/0"
   }
 
-  async patch(bossDamage) {
-    this.number -= bossDamage
-    this._patchData()
-  }
-
   async get() {
-    const data = await this._getData();
-    this.number = data.number
-    $("#content").text(data.number)
-  }
-
-  async _getData() {
     const response = await fetch(this.URL)
-    return response.json()
+    this.data = await response.json()
+    this._assignAttributes()
   }
 
-  async _patchData() {
+  async _assignAttributes() {
+    this.bossCurrentHealth = this.data.number
+  }
+
+  async updateBossHealth(damage) {
     fetch(this.URL, {
       method: 'PATCH',
       body: JSON.stringify({
         "id": 0,
         "title": "First post!",
         "content": "Second post!",
-        "number": this.number
+        "number": this.bossCurrentHealth -= damage
       }),
       headers: {
         "Content-type": "application/json",

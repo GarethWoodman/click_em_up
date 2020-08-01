@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var game =  new Game()
-  game.boss.calculateHealth()
+  update()
 
   $('#minion').prepend('<img src="./images/goomba.png" />')
   update()
@@ -28,7 +28,9 @@ $(document).ready(function() {
 
   function update() {
     game.api.get()
-    game.boss.calculateHealth()
+    console.log(game.boss.currentHealth());
+    $('#health').width(game.boss.currentHealth())
+    $("#content").text(game.api.number)
     $('#boss_hp').text(game.boss.hp)
     $('#minion_hp').text(game.minion.hp)
     $('#player_level').text(game.player.level)

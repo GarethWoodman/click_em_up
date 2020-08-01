@@ -7,7 +7,7 @@ class Game {
   }
 
   attackBoss(){
-    this.boss.takeDamage(this.player)
+    this.api.updateBossHealth(this.player.atkPower)
   }
 
   attackMinion(){

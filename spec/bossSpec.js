@@ -1,4 +1,5 @@
 describe("Boss", function() {
+  let fakeApi = {}
   let boss = new Boss();
   const maxHP = 100;
 
@@ -14,11 +15,11 @@ describe("Boss", function() {
       expect(boss.hp).toEqual(maxHP)
     });
 
-    describe("takes damage", function() {
-      it("should reduce HP", function() {
-        boss.takeDamage(player)
-        expect(boss.hp).toEqual(maxHP - player.atkPower)
-      });
-    });
+    // describe("takes damage", function() {
+    //   it("should reduce HP", function() {
+    //     boss.takeDamage(player)
+    //     expect(boss.hp).toEqual(maxHP - player.atkPower)
+    //   });
+    // });
   });
 });
