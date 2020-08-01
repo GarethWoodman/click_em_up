@@ -12,6 +12,11 @@ $(document).ready(function() {
     update()
   });
 
+  $(window).unload(function() {
+    Cookies.set("playerExp", game.player.exp)
+    Cookies.set("playerLevel", game.player.level)
+  });
+
   window.setInterval(function(){
     update();
   }, 1000);
@@ -27,14 +32,12 @@ $(document).ready(function() {
     $('#minion_hp_1').width(game.minions[1].currentHealth())
     $('#minion_hp_2').width(game.minions[2].currentHealth())
 
-    $('#player_level').text(game.player.level)
-    $('#player_exp').text(game.player.exp)
+    $('#player_level').html(`<p>Level: ${game.player.level}</p>`)
+    $('#player_exp').html(`<p>Exp: ${game.player.exp}</p>`)
   }
 
   function attackMinion(minion) {
     let i = minion.split('').pop()
-    console.log(i);
-
     game.attackMinion(i);
 
     $(minion).empty();

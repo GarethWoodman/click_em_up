@@ -17,19 +17,19 @@ class Game {
   _checkMinion(i) {
     if(this.minions[i].isDefeated) {
       this.player.reward(this.minions[i])
-      this.minions[i] = new Minion(100, 1)
+      this.minions[i] = new Minion(10, 1)
     }
   }
   _createMinions() {
     this.minions = []
-    this.minions.push(new Minion(100, 1))
+    this.minions.push(new Minion(10, 1))
     this.minions.push(new Minion(100, 1))
     this.minions.push(new Minion(100, 1))
   }
 
   _createPlayer() {
     this.player          = new Player();
-    this.player.atkPower = 5;
+    this.player.atkPower = 1;
   }
 
   _createBoss() {
