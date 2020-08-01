@@ -1,25 +1,15 @@
 $(document).ready(function() {
   var game =  new Game()
-  update()
 
-  $('#minion').prepend('<img src="./images/goomba.png" />')
-  update()
+  setup()
+
+  $('#minion_0').on('mousedown', function() { attackMinion('#minion_0') });
+  $('#minion_1').on('mousedown', function() { attackMinion('#minion_1') });
+  $('#minion_2').on('mousedown', function() { attackMinion('#minion_2') });
 
   $('#boss').on('click', function() {
     game.attackBoss();
     update()
-  });
-
-  $('#minion').on('mousedown', function() {
-    game.attackMinion();
-    $('#minion').empty();
-    $('#minion').prepend('<img src="./images/hit.jpg" />')
-    update()
-  });
-
-  $('#minion').on('mouseup', function() {
-    $('#minion').empty();
-    $('#minion').prepend('<img src="./images/goomba.png" />')
   });
 
   window.setInterval(function(){
@@ -28,12 +18,40 @@ $(document).ready(function() {
 
   function update() {
     Api.get()
-    console.log(game.boss.currentHealth());
-    $('#health').width(game.boss.currentHealth())
+    //console.log(game.boss.currentHealth());
+    $('#boss_hp').width(game.boss.currentHealth())
     $("#content").text(Api.bossCurrentHealth)
-    $('#boss_hp').text(game.boss.hp)
-    $('#minion_hp').text(game.minion.hp)
+    //$('#boss_hp').text(game.boss.hp)
+
+    $('#minion_hp_0').width(game.minions[0].currentHealth())
+    $('#minion_hp_1').width(game.minions[1].currentHealth())
+    $('#minion_hp_2').width(game.minions[2].currentHealth())
+
     $('#player_level').text(game.player.level)
     $('#player_exp').text(game.player.exp)
+  }
+
+  function attackMinion(minion) {
+    let i = minion.split('').pop()
+    console.log(i);
+
+    game.attackMinion(i);
+
+    $(minion).empty();
+    $(minion).prepend('<img src="./images/hit.jpg" />')
+
+    $(minion).on('mouseup', function() {
+      $(minion).empty();
+      $(minion).prepend('<img src="./images/goomba.png" />')
+    });
+
+    update()
+  }
+
+  function setup() {
+    $('#minion_0').prepend('<img src="./images/goomba.png" />')
+    $('#minion_1').prepend('<img src="./images/goomba.png" />')
+    $('#minion_2').prepend('<img src="./images/goomba.png" />')
+    update()
   }
 });

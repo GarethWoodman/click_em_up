@@ -1,9 +1,9 @@
 class Boss {
-  constructor() {
-    this.maxHP = 1000
+  constructor(maxHP) {
+    this.maxHP = maxHP
   }
 
   currentHealth() {
-    return (100 / this.maxHP) * Api.bossCurrentHealth
+    return Health.get(this.maxHP, Api.bossCurrentHP)
   }
 };

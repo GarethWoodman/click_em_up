@@ -7,20 +7,43 @@
   <body>
 
     <div class="content">
-      <div id="health-bar">
-        <div id="health"></div>
+      <div class="health-bar">
+        <div id="boss_hp"></div>
       </div>
       <div id="boss">boss</div>
 
       <br>
 
-      <div id="minion_hp">minion_hp</div>
-      <div id="minion"></div>
+      <div id="minions">
+        <div class="minion">
+          <div class="health-bar">
+            <div id="minion_hp_0"></div>
+          </div>
+          <div id="minion_0"></div>
+        </div>
+
+        <div class="minion">
+          <div class="health-bar">
+            <div id="minion_hp_1"></div>
+          </div>
+          <div id="minion_1"></div>
+        </div>
+
+        <div class="minion">
+          <div class="health-bar">
+            <div id="minion_hp_2"></div>
+          </div>
+          <div id="minion_2"></div>
+        </div>
+
+      </div>
 
       <br>
 
-      Level:  <div id="player_level">player_level</div>
-      Exp: <div id="player_exp">player_exp</div>
+      <div id="player">
+        Level:  <div id="player_level">player_level</div>
+        Exp: <div id="player_exp">player_exp</div>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -28,6 +51,7 @@
     <script src="src/Game.js"></script>
     <script src="src/Api.js"></script>
     <script src="src/Boss.js"></script>
+    <script src="src/Health.js"></script>
     <script src="src/Player.js"></script>
     <script src="src/Minion.js"></script>
   </body>

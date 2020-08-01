@@ -1,7 +1,7 @@
 class Game {
   constructor(){
     this._createPlayer()
-    this._createMinion()
+    this._createMinions()
     this._createBoss()
   }
 
@@ -9,21 +9,22 @@ class Game {
     Api.updateBossHealth(this.player.atkPower)
   }
 
-  attackMinion(){
-    this.minion.takeDamage(this.player)
-    this._checkMinion();
+  attackMinion(i){
+    this.minions[i].takeDamage(this.player)
+    this._checkMinion(i);
   }
 
-  _checkMinion() {
-    if(this.minion.isDefeated) {
-      this.player.reward(this.minion)
-      this._createMinion();
+  _checkMinion(i) {
+    if(this.minions[i].isDefeated) {
+      this.player.reward(this.minions[i])
+      this.minions[i] = this._createMinion()
     }
   }
-  _createMinion() {
-    this.minion     = new Minion();
-    this.minion.hp  = 10;
-    this.minion.exp = 1;
+  _createMinions() {
+    this.minions = []
+    this.minions.push(new Minion(100, 1))
+    this.minions.push(new Minion(100, 1))
+    this.minions.push(new Minion(100, 1))
   }
 
   _createPlayer() {
@@ -32,7 +33,6 @@ class Game {
   }
 
   _createBoss() {
-    this.boss    = new Boss();
-    this.boss.hp = 100;
+    this.boss = new Boss(1000);
   }
 }

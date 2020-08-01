@@ -7,7 +7,7 @@ class Api {
   }
 
   static async _assignAttributes() {
-    this.bossCurrentHealth = this.data.number
+    this.bossCurrentHP = this.data.number
   }
 
   static async updateBossHealth(damage) {
@@ -17,7 +17,7 @@ class Api {
         "id": 0,
         "title": "First post!",
         "content": "Second post!",
-        "number": this.bossCurrentHealth -= damage
+        "number": this.bossCurrentHP -= damage
       }),
       headers: {
         "Content-type": "application/json",

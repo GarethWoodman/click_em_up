@@ -2,12 +2,12 @@ h1, p, th, td {
   font-family: 'H', 'Trebuchet MS', 'Helvetica'
 }
 
-#boss, #minion {
+#boss {
   cursor: pointer;
   user-select: none;
   width: 0px;
 
-  width: 700px;
+  width: 1024px;
   padding: 10px;
   text-align: center;
   margin: 0 auto;
@@ -15,7 +15,7 @@ h1, p, th, td {
 }
 
 .content {
-  width: 700px;
+  width: 1024px;
   height: 96vh;
   padding: 10px;
   text-align: center;
@@ -27,7 +27,14 @@ h1, p, th, td {
   display: inline-block;
 }
 
-#health-bar {
+.minion {
+  cursor: pointer;
+  user-select: none;
+  width: 300px;
+  display: inline-block;
+}
+
+.health-bar {
   width: 100px;
   height: 20px;
   background-color: red;
@@ -36,7 +43,7 @@ h1, p, th, td {
   margin: 0 auto;
 }
 
-#health {
+#boss_hp, #minion_hp_0, #minion_hp_1, #minion_hp_2 {
   height: 20px;
   background-color: green;
 }
