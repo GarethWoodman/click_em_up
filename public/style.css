@@ -45,7 +45,7 @@ body {
 .health-bar {
   width: 100px;
   height: 20px;
-  background-color: red;
+  background-image: linear-gradient(red , #753333);
   text-align: center;
   margin: 0 auto;
   margin: 0 auto;
@@ -53,5 +53,5 @@ body {
 
 #boss_hp, #minion_hp_0, #minion_hp_1, #minion_hp_2 {
   height: 20px;
-  background-color: green;
+  background-image: linear-gradient(#00ff58 , #34953a);
 }
