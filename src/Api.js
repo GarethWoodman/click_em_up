@@ -1,19 +1,16 @@
 class Api {
-  constructor() {
+  static async get() {
     this.URL = "https://api-test-dragon.herokuapp.com/objects/0"
-  }
-
-  async get() {
     const response = await fetch(this.URL)
     this.data = await response.json()
     this._assignAttributes()
   }
 
-  async _assignAttributes() {
+  static async _assignAttributes() {
     this.bossCurrentHealth = this.data.number
   }
 
-  async updateBossHealth(damage) {
+  static async updateBossHealth(damage) {
     fetch(this.URL, {
       method: 'PATCH',
       body: JSON.stringify({

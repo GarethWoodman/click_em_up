@@ -1,13 +1,12 @@
 class Game {
   constructor(){
-    this.api = new Api()
     this._createPlayer()
     this._createMinion()
     this._createBoss()
   }
 
   attackBoss(){
-    this.api.updateBossHealth(this.player.atkPower)
+    Api.updateBossHealth(this.player.atkPower)
   }
 
   attackMinion(){
@@ -33,7 +32,7 @@ class Game {
   }
 
   _createBoss() {
-    this.boss    = new Boss(this.api);
+    this.boss    = new Boss();
     this.boss.hp = 100;
   }
 }

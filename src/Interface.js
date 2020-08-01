@@ -27,10 +27,10 @@ $(document).ready(function() {
   }, 1000);
 
   function update() {
-    game.api.get()
+    Api.get()
     console.log(game.boss.currentHealth());
     $('#health').width(game.boss.currentHealth())
-    $("#content").text(game.api.number)
+    $("#content").text(Api.bossCurrentHealth)
     $('#boss_hp').text(game.boss.hp)
     $('#minion_hp').text(game.minion.hp)
     $('#player_level').text(game.player.level)

@@ -1,11 +1,9 @@
 class Boss {
-  constructor(api) {
-    this.api = api
+  constructor() {
     this.maxHP = 1000
-    this.damage = 0
   }
 
   currentHealth() {
-    return (100 / this.maxHP) * this.api.bossCurrentHealth
+    return (100 / this.maxHP) * Api.bossCurrentHealth
   }
 };
