@@ -17,7 +17,7 @@ class Game {
   _checkMinion(i) {
     if(this.minions[i].isDefeated) {
       this.player.reward(this.minions[i])
-      this.minions[i] = this._createMinion()
+      this.minions[i] = new Minion(100, 1)
     }
   }
   _createMinions() {
