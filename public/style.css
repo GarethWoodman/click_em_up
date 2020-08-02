@@ -26,9 +26,7 @@ p {
 #boss {
   cursor: pointer;
   user-select: none;
-  width: 0px;
-
-  width: 1024px;
+  width: 400px;
   padding: 10px;
   text-align: center;
   margin: 0 auto;
@@ -43,6 +41,11 @@ p {
   margin: 0 auto;
   margin: 0 auto;
   }
+
+.damage_points {
+  color: red;
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+}
 
 #player_level, #player_exp {
   display: inline-block;

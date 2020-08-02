@@ -29,7 +29,6 @@ class Game {
 
   _createPlayer() {
     this.player          = new Player();
-    this.player.atkPower = 1;
   }
 
   _createBoss() {

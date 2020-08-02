@@ -14,6 +14,12 @@ class Player {
     } else {
       this.exp = 0
     }
+
+    if(Cookies.get('playerAtk')){
+      this.atkPower = parseInt(Cookies.get('playerAtk'))
+    } else {
+      this.atkPower = 1
+    }
   }
 
   reward(minion){
@@ -26,7 +32,7 @@ class Player {
   _levelUp(){
     this.level += 1
     this.exp = 0
-    this.atkPower += 2
+    this.atkPower += 1
   };
 
   _privateMethd(){

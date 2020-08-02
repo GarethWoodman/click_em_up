@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var game =  new Game()
+  var damageIndex = 0
 
   setup()
 
@@ -9,12 +10,18 @@ $(document).ready(function() {
 
   $('#boss').on('click', function() {
     game.attackBoss();
+    $('#boss').on('mouseup', function(e) {
+      showDamage(e)
+      $('#boss').unbind('mouseup');
+    })
     update()
+
   });
 
   $(window).unload(function() {
     Cookies.set("playerExp", game.player.exp)
     Cookies.set("playerLevel", game.player.level)
+    Cookies.set("playerAtk", game.player.atkPower)
   });
 
   window.setInterval(function(){
@@ -43,12 +50,20 @@ $(document).ready(function() {
     $(minion).empty();
     $(minion).prepend('<img src="./images/hit.jpg" />')
 
-    $(minion).on('mouseup', function() {
+    $(minion).on('mouseup', function(e) {
       $(minion).empty();
       $(minion).prepend('<img src="./images/minion.png" />')
+      showDamage(e)
+      $(minion).unbind('mouseup');
     });
 
     update()
+  }
+
+  function showDamage(e){
+    let damage = new Damage(damageIndex += 1, game.player.atkPower)
+    $('#attackNumbers').append(damage.html)
+    damage.display(e)
   }
 
   function setup() {
